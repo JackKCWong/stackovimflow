@@ -1,0 +1,911 @@
+{
+  "kind": "customsearch#search",
+  "url": {
+    "type": "application/json",
+    "template": "https://www.googleapis.com/customsearch/v1?q={searchTerms}&num={count?}&start={startIndex?}&lr={language?}&safe={safe?}&cx={cx?}&sort={sort?}&filter={filter?}&gl={gl?}&cr={cr?}&googlehost={googleHost?}&c2coff={disableCnTwTranslation?}&hq={hq?}&hl={hl?}&siteSearch={siteSearch?}&siteSearchFilter={siteSearchFilter?}&exactTerms={exactTerms?}&excludeTerms={excludeTerms?}&linkSite={linkSite?}&orTerms={orTerms?}&relatedSite={relatedSite?}&dateRestrict={dateRestrict?}&lowRange={lowRange?}&highRange={highRange?}&searchType={searchType}&fileType={fileType?}&rights={rights?}&imgSize={imgSize?}&imgType={imgType?}&imgColorType={imgColorType?}&imgDominantColor={imgDominantColor?}&alt=json"
+  },
+  "queries": {
+    "request": [
+      {
+        "title": "Google Custom Search - how to read a file in rust",
+        "totalResults": "359000",
+        "searchTerms": "how to read a file in rust",
+        "count": 10,
+        "startIndex": 1,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "408e8207f555048b2"
+      }
+    ],
+    "nextPage": [
+      {
+        "title": "Google Custom Search - how to read a file in rust",
+        "totalResults": "359000",
+        "searchTerms": "how to read a file in rust",
+        "count": 10,
+        "startIndex": 11,
+        "inputEncoding": "utf8",
+        "outputEncoding": "utf8",
+        "safe": "off",
+        "cx": "408e8207f555048b2"
+      }
+    ]
+  },
+  "context": {
+    "title": "socs"
+  },
+  "searchInformation": {
+    "searchTime": 0.173744,
+    "formattedSearchTime": "0.17",
+    "totalResults": "359000",
+    "formattedTotalResults": "359,000"
+  },
+  "items": [
+    {
+      "kind": "customsearch#result",
+      "title": "What's the de-facto way of reading and writing files in Rust 1.x ...",
+      "htmlTitle": "What&#39;s the de-facto way of \u003cb\u003ereading\u003c/b\u003e and writing \u003cb\u003efiles in Rust\u003c/b\u003e 1.x ...",
+      "link": "https://stackoverflow.com/questions/31192956/whats-the-de-facto-way-of-reading-and-writing-files-in-rust-1-x",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Jul 2, 2015 ... Rust 1.26 and onwards · Read a file to a String · Read a file as a Vec\u003cu8\u003e · Write a file.",
+      "htmlSnippet": "Jul 2, 2015 \u003cb\u003e...\u003c/b\u003e \u003cb\u003eRust\u003c/b\u003e 1.26 and onwards &middot; \u003cb\u003eRead a file\u003c/b\u003e to a String &middot; \u003cb\u003eRead a file\u003c/b\u003e as a Vec&lt;u8&gt; &middot; Write a \u003cb\u003efile\u003c/b\u003e.",
+      "cacheId": "GTB-3NfUDioJ",
+      "formattedUrl": "https://stackoverflow.com/.../whats-the-de-facto-way-of-reading-and-writing- files-in-rust-1-x",
+      "htmlFormattedUrl": "https://stackoverflow.com/.../whats-the-de-facto-way-of-\u003cb\u003eread\u003c/b\u003eing-and-writing- \u003cb\u003efile\u003c/b\u003es-in-\u003cb\u003erust\u003c/b\u003e-1-x",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "What's the de-facto way of reading and writing files in Rust 1.x?",
+            "description": "With Rust being comparatively new, I've seen far too many ways of reading and writing files. Many are extremely messy snippets someone came up with for their blog, and 99% of the examples I've found ("
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "295",
+            "commentcount": "3",
+            "answercount": "3",
+            "name": "What's the de-facto way of reading and writing files in Rust 1.x?",
+            "datecreated": "2015-07-02T19:23:46",
+            "text": "With Rust being comparatively new, I've seen far too many ways of reading and writing files. Many are extremely messy snippets someone came up with for their blog, and 99% of the examples I've...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "402",
+            "commentcount": "10",
+            "text": "None of the functions I show here panic on their own, but I am using expect because I don't know what kind of error handling will fit best into your application. Go read The Rust Programming...",
+            "datecreated": "2015-07-02T19:46:38",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "26",
+            "commentcount": "1",
+            "text": "For anybody who is writing to a file, the accepted answer is good but if you need to append to the file you have to use the OpenOptions struct instead: use std::io::Write; use std::fs::OpenOptions;...",
+            "datecreated": "2021-03-04T22:48:01",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "11",
+            "text": "By using the Buffered I/O you can copy the file size is greater than the actual memory. use std::fs::{File, OpenOptions}; use std::io::{BufReader, BufWriter, Write, BufRead}; fn main() { let...",
+            "datecreated": "2021-03-10T02:55:05",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "Jared"
+          },
+          {
+            "name": "Shepmaster"
+          },
+          {
+            "name": "Dragoon"
+          },
+          {
+            "name": "will"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "What's the de-facto way of reading and writing files in Rust 1.x?",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "With Rust being comparatively new, I've seen far too many ways of reading and writing files. Many are extremely messy snippets someone came up with for their blog, and 99% of the examples I've found (",
+            "og:url": "https://stackoverflow.com/questions/31192956/whats-the-de-facto-way-of-reading-and-writing-files-in-rust-1-x"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "rust - How to read JSON file with serde? - Stack Overflow",
+      "htmlTitle": "\u003cb\u003erust\u003c/b\u003e - \u003cb\u003eHow to read\u003c/b\u003e JSON \u003cb\u003efile\u003c/b\u003e with serde? - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/63657897/how-to-read-json-file-with-serde",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Aug 30, 2020 ... Your code has two issues. First, you didn't handle the error when parsing JSON. Just like read_to_string() returns a Result and you had to ...",
+      "htmlSnippet": "Aug 30, 2020 \u003cb\u003e...\u003c/b\u003e Your code has two issues. First, you didn&#39;t handle the error when parsing JSON. Just like read_to_string() returns a Result and you had to&nbsp;...",
+      "cacheId": "oUPnBRQsYHUJ",
+      "formattedUrl": "https://stackoverflow.com/questions/.../how-to-read-json-file-with-serde",
+      "htmlFormattedUrl": "https://stackoverflow.com/questions/.../\u003cb\u003ehow-to-read\u003c/b\u003e-json-\u003cb\u003efile\u003c/b\u003e-with-serde",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "How to read JSON file with serde?",
+            "description": "I'd like to read a JSON file and print its contents. I'm trying to use the serde crate but can't understand why this does not work: use serde_json; use std::fs; fn main() { let path = \"./..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "6",
+            "answercount": "1",
+            "name": "How to read JSON file with serde?",
+            "datecreated": "2020-08-30T13:24:30",
+            "text": "I'd like to read a JSON file and print its contents. I'm trying to use the serde crate but can't understand why this does not work: use serde_json; use std::fs; fn main() { let path = \"./src/input....",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "9",
+            "text": "Your code has two issues. First, you didn't handle the error when parsing JSON. Just like read_to_string() returns a Result and you had to use expect() to get to the underlying value in case...",
+            "datecreated": "2020-08-30T13:41:57",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "turtle"
+          },
+          {
+            "name": "user4815162342"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "How to read JSON file with serde?",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "I'd like to read a JSON file and print its contents. I'm trying to use the serde crate but can't understand why this does not work:\nuse serde_json;\nuse std::fs;\n\nfn main() {\n    let path = &quot;./...",
+            "og:url": "https://stackoverflow.com/questions/63657897/how-to-read-json-file-with-serde"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "How to read a text File in Rust and read mutliple Values per line ...",
+      "htmlTitle": "\u003cb\u003eHow to read\u003c/b\u003e a text \u003cb\u003eFile in Rust\u003c/b\u003e and \u003cb\u003eread\u003c/b\u003e mutliple Values per line ...",
+      "link": "https://stackoverflow.com/questions/70206716/how-to-read-a-text-file-in-rust-and-read-mutliple-values-per-line",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Dec 2, 2021 ... You can use the BuffRead trait, which has a read_line method. Also you can use lines . For doing so the easiest option would be to wrap the ...",
+      "htmlSnippet": "Dec 2, 2021 \u003cb\u003e...\u003c/b\u003e You can use the BuffRead trait, which has a read_line method. Also you can use lines . For doing so the easiest option would be to wrap the&nbsp;...",
+      "cacheId": "0b_GNdKAxCoJ",
+      "formattedUrl": "https://stackoverflow.com/.../how-to-read-a-text-file-in-rust-and-read- mutliple-values-per-line",
+      "htmlFormattedUrl": "https://stackoverflow.com/.../\u003cb\u003ehow-to-read\u003c/b\u003e-a-text-\u003cb\u003efile-in-rust\u003c/b\u003e-and-\u003cb\u003eread\u003c/b\u003e- mutliple-values-per-line",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "How to read a text File in Rust and read mutliple Values per line",
+            "description": "So basically, I have a text file with the following syntax: String int String int String int I have an idea how to read the Values if there is only one entry per line, but if there are multi..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "2",
+            "commentcount": "3",
+            "answercount": "2",
+            "name": "How to read a text File in Rust and read mutliple Values per line",
+            "datecreated": "2021-12-02T21:30:57",
+            "text": "So basically, I have a text file with the following syntax: String int String int String int I have an idea how to read the Values if there is only one entry per line, but if there are multiple,...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "3",
+            "commentcount": "2",
+            "text": "You can use the BuffRead trait, which has a read_line method. Also you can use lines. For doing so the easiest option would be to wrap the File instance with a BuffReader: use std::fs; use...",
+            "datecreated": "2021-12-02T21:38:16",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "0",
+            "commentcount": "3",
+            "text": "Based on: https://doc.rust-lang.org/rust-by-example/std_misc/file/read_lines.html For data.txt to contain: str1 100 str2 200 str3 300 use std::fs::File; use std::io::{self, BufRead}; use std::path:...",
+            "datecreated": "2021-12-02T21:48:34",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "skrrskrr"
+          },
+          {
+            "name": "skrrskrr"
+          },
+          {
+            "name": "Netwave"
+          },
+          {
+            "name": "bits"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "How to read a text File in Rust and read mutliple Values per line",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "So basically, I have a text file with the following syntax:\nString int    \nString int  \nString int\n\nI have an idea how to read the Values if there is only one entry per line, but if there are multi...",
+            "og:url": "https://stackoverflow.com/questions/70206716/how-to-read-a-text-file-in-rust-and-read-mutliple-values-per-line"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "input - Rust: How to read a file block by block - Stack Overflow",
+      "htmlTitle": "input - \u003cb\u003eRust\u003c/b\u003e: \u003cb\u003eHow to read a file\u003c/b\u003e block by block - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/61352882/rust-how-to-read-a-file-block-by-block",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Apr 21, 2020 ... This is the working solution. let mut buffer = [0; 16]; let mut count = 0; while let Ok(n) = f1.read(&mut buffer[..]) { if n !=",
+      "htmlSnippet": "Apr 21, 2020 \u003cb\u003e...\u003c/b\u003e This is the working solution. let mut buffer = [0; 16]; let mut count = 0; while let Ok(n) = f1.\u003cb\u003eread\u003c/b\u003e(&amp;mut buffer[..]) { if n !=",
+      "cacheId": "6Mvwbh3i7NUJ",
+      "formattedUrl": "https://stackoverflow.com/questions/.../rust-how-to-read-a-file-block-by- block",
+      "htmlFormattedUrl": "https://stackoverflow.com/questions/.../\u003cb\u003erust\u003c/b\u003e-\u003cb\u003ehow-to-read-a-file\u003c/b\u003e-block-by- block",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "Rust: How to read a file block by block",
+            "description": "i am totally new to rust. I want to read a file block by block/Chunks (every block should contain 16 Bytes) and write it - for this test scenario - into another file, f2. So i i tried it first with..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "3",
+            "commentcount": "9",
+            "answercount": "2",
+            "name": "Rust: How to read a file block by block",
+            "datecreated": "2020-04-21T20:43:06",
+            "text": "i am totally new to rust. I want to read a file block by block/Chunks (every block should contain 16 Bytes) and write it - for this test scenario - into another file, f2. So i i tried it first...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "0",
+            "text": "This is the working solution. let mut buffer = [0; 16]; let mut count = 0; while let Ok(n) = f1.read(&mut buffer[..]) { if n != 16 { let rest = &buffer[0..n]; do_smth(&mut f2, &rest); break;...",
+            "datecreated": "2020-04-22T21:33:03",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "0",
+            "text": "There are two thing you could consider in order to improve performance: Wrapping File in a BufReader to reduce the number of system calls and essentially chunking your file access. You might...",
+            "datecreated": "2020-10-30T12:51:28",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "Emanuel"
+          },
+          {
+            "name": "Emanuel"
+          },
+          {
+            "name": "Markus Klein"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "Rust: How to read a file block by block",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "i am totally new to rust. I want to read a file block by block/Chunks (every block should contain 16 Bytes) and write it - for this test scenario - into another file, f2. So i i tried it first with...",
+            "og:url": "https://stackoverflow.com/questions/61352882/rust-how-to-read-a-file-block-by-block"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "io - How to read a struct from a file in Rust? - Stack Overflow",
+      "htmlTitle": "io - \u003cb\u003eHow to read\u003c/b\u003e a struct from a \u003cb\u003efile in Rust\u003c/b\u003e? - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/25410028/how-to-read-a-struct-from-a-file-in-rust",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Aug 20, 2014 ... Here you go: use std::io::Read; use std::mem; use std::slice; #[repr(C, packed)] #[derive(Debug, Copy, Clone)] struct Configuration { item1: ...",
+      "htmlSnippet": "Aug 20, 2014 \u003cb\u003e...\u003c/b\u003e Here you go: use std::io::\u003cb\u003eRead\u003c/b\u003e; use std::mem; use std::slice; #[repr(C, packed)] #[derive(Debug, Copy, Clone)] struct Configuration { item1:&nbsp;...",
+      "cacheId": "-eAraNzbYiMJ",
+      "formattedUrl": "https://stackoverflow.com/questions/.../how-to-read-a-struct-from-a-file-in- rust",
+      "htmlFormattedUrl": "https://stackoverflow.com/questions/.../\u003cb\u003ehow-to-read\u003c/b\u003e-a-struct-from-a-\u003cb\u003efile-in- rust\u003c/b\u003e",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "How to read a struct from a file in Rust?",
+            "description": "Is there a way I can read a structure directly from a file in Rust? My code is: use std::fs::File; struct Configuration { item1: u8, item2: u16, item3: i32, item4: [char; 8], } f..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "32",
+            "commentcount": "4",
+            "answercount": "3",
+            "name": "How to read a struct from a file in Rust?",
+            "datecreated": "2014-08-20T16:36:09",
+            "text": "Is there a way I can read a structure directly from a file in Rust? My code is: use std::fs::File; struct Configuration { item1: u8, item2: u16, item3: i32, item4: [char; 8], } fn main() {...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "16",
+            "commentcount": "7",
+            "text": "Here you go: use std::io::Read; use std::mem; use std::slice; #[repr(C, packed)] #[derive(Debug, Copy, Clone)] struct Configuration { item1: u8, item2: u16, item3: i32, item4: [char; 8], }...",
+            "datecreated": "2014-08-20T17:31:54",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "12",
+            "commentcount": "4",
+            "text": "As Vladimir Matveev mentions, using the byteorder crate is often the best solution. This way, you account for endianness issues, don't have to deal with any unsafe code, or worry about alignment...",
+            "datecreated": "2019-01-23T00:04:28",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "5",
+            "commentcount": "7",
+            "text": "The following code does not take into account any endianness or padding issues and is intended to be used with POD types. struct Configuration should be safe in this case. Here is a function...",
+            "datecreated": "2016-07-12T20:49:39",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "Jeroen"
+          },
+          {
+            "name": "Vladimir Matveev"
+          },
+          {
+            "name": "Shepmaster"
+          },
+          {
+            "name": "malbarbo"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "How to read a struct from a file in Rust?",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "Is there a way I can read a structure directly from a file in Rust? My code is:\n\nuse std::fs::File;\n\nstruct Configuration {\n    item1: u8,\n    item2: u16,\n    item3: i32,\n    item4: [char; 8],\n}\n\nf...",
+            "og:url": "https://stackoverflow.com/questions/25410028/how-to-read-a-struct-from-a-file-in-rust"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "io - Read file character-by-character in Rust - Stack Overflow",
+      "htmlTitle": "io - \u003cb\u003eRead file\u003c/b\u003e character-by-character in \u003cb\u003eRust\u003c/b\u003e - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/35385703/read-file-character-by-character-in-rust",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Feb 13, 2016 ... Let's compare 4 approaches. 1. Read::chars. You could copy Read::chars implementation, but it is marked unstable with.",
+      "htmlSnippet": "Feb 13, 2016 \u003cb\u003e...\u003c/b\u003e Let&#39;s compare 4 approaches. 1. \u003cb\u003eRead\u003c/b\u003e::chars. You could copy \u003cb\u003eRead\u003c/b\u003e::chars implementation, but it is marked unstable with.",
+      "cacheId": "Wc9EY45pmA4J",
+      "formattedUrl": "https://stackoverflow.com/questions/.../read-file-character-by-character-in- rust",
+      "htmlFormattedUrl": "https://stackoverflow.com/questions/.../\u003cb\u003eread\u003c/b\u003e-\u003cb\u003efile\u003c/b\u003e-character-by-character-in- \u003cb\u003erust\u003c/b\u003e",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "Read file character-by-character in Rust",
+            "description": "Is there an idiomatic way to process a file one character at a time in Rust? This seems to be roughly what I'm after: let mut f = io::BufReader::new(try!(fs::File::open(\"input.txt\"))); for c in f."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "24",
+            "commentcount": "2",
+            "answercount": "3",
+            "name": "Read file character-by-character in Rust",
+            "datecreated": "2016-02-13T21:47:48",
+            "text": "Is there an idiomatic way to process a file one character at a time in Rust? This seems to be roughly what I'm after: let mut f = io::BufReader::new(try!(fs::File::open(\"input.txt\"))); for...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "11",
+            "commentcount": "2",
+            "text": "Let's compare 4 approaches. 1. Read::chars You could copy Read::chars implementation, but it is marked unstable with the semantics of a partial read/write of where errors happen is currently...",
+            "datecreated": "2016-05-12T14:20:58",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "3",
+            "commentcount": "1",
+            "text": "I cannot use lines() because my file could be a single line that is gigabytes in size. This an improvement on @malbarbo's recommendation of copying Read::chars from the an old version of Rust....",
+            "datecreated": "2021-02-15T16:33:57",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "0",
+            "commentcount": "2",
+            "text": "There are two solutions that make sense here. First, you could copy the implementation of Read::chars() and use it; that would make it completely trivial to move your code over to the standard...",
+            "datecreated": "2016-05-12T03:42:44",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "Tim McLean"
+          },
+          {
+            "name": "malbarbo"
+          },
+          {
+            "name": "joseph"
+          },
+          {
+            "name": "Leonora Tindall"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "Read file character-by-character in Rust",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "Is there an idiomatic way to process a file one character at a time in Rust?\n\nThis seems to be roughly what I'm after:\n\nlet mut f = io::BufReader::new(try!(fs::File::open(\"input.txt\")));\n\nfor c in f.",
+            "og:url": "https://stackoverflow.com/questions/35385703/read-file-character-by-character-in-rust"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "rust - Read a file and get an array of strings - Stack Overflow",
+      "htmlTitle": "\u003cb\u003erust\u003c/b\u003e - \u003cb\u003eRead a file\u003c/b\u003e and get an array of strings - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/30801031/read-a-file-and-get-an-array-of-strings",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Jun 12, 2015 ... DK.'s answer is quite right and has great explanation. However, you stated: Read a file and get an array of strings. Rust arrays have a ...",
+      "htmlSnippet": "Jun 12, 2015 \u003cb\u003e...\u003c/b\u003e DK.&#39;s answer is quite right and has great explanation. However, you stated: \u003cb\u003eRead a file\u003c/b\u003e and get an array of strings. \u003cb\u003eRust\u003c/b\u003e arrays have a&nbsp;...",
+      "cacheId": "SKeJWvULghMJ",
+      "formattedUrl": "https://stackoverflow.com/questions/.../read-a-file-and-get-an-array-of-strings",
+      "htmlFormattedUrl": "https://stackoverflow.com/questions/.../\u003cb\u003eread-a-file\u003c/b\u003e-and-get-an-array-of-strings",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "Read a file and get an array of strings",
+            "description": "I want to read a file and get back a vector of Strings. The following function works, but is there a more concise or idiomatic way? use std::fs::File; use std::io::Read; fn lines_from_file(filena..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "46",
+            "commentcount": "2",
+            "answercount": "2",
+            "name": "Read a file and get an array of strings",
+            "datecreated": "2015-06-12T10:38:49",
+            "text": "I want to read a file and get back a vector of Strings. The following function works, but is there a more concise or idiomatic way? use std::fs::File; use std::io::Read; fn lines_from_file(filename...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "36",
+            "commentcount": "2",
+            "text": "DK.'s answer is quite right and has great explanation. However, you stated: Read a file and get an array of strings Rust arrays have a fixed length, known at compile time, so I assume you really...",
+            "datecreated": "2016-03-05T21:16:23",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "22",
+            "commentcount": "3",
+            "text": "As BurntSushi said, you could just use the lines() iterator. But, to address your question as-is: You should probably read Error Handling in Rust; those unwrap()s should be turned into ?s,...",
+            "datecreated": "2015-06-12T11:15:54",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "Nathan Long"
+          },
+          {
+            "name": "Shepmaster"
+          },
+          {
+            "name": "DK."
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "Read a file and get an array of strings",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "I want to read a file and get back a vector of Strings. The following function works, but is there a more concise or idiomatic way?\n\nuse std::fs::File;\nuse std::io::Read;\n\nfn lines_from_file(filena...",
+            "og:url": "https://stackoverflow.com/questions/30801031/read-a-file-and-get-an-array-of-strings"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "csv - How to read and process a pipe delimited file in Rust? - Stack ...",
+      "htmlTitle": "csv - \u003cb\u003eHow to read\u003c/b\u003e and process a pipe delimited \u003cb\u003efile in Rust\u003c/b\u003e? - Stack ...",
+      "link": "https://stackoverflow.com/questions/43887908/how-to-read-and-process-a-pipe-delimited-file-in-rust",
+      "displayLink": "stackoverflow.com",
+      "snippet": "May 10, 2017 ... As was mentioned, use the csv crate to do the heavy lifting of parsing the file. Then it's just a matter of grouping each row by using a ...",
+      "htmlSnippet": "May 10, 2017 \u003cb\u003e...\u003c/b\u003e As was mentioned, use the csv crate to do the heavy lifting of parsing the \u003cb\u003efile\u003c/b\u003e. Then it&#39;s just a matter of grouping each row by using a&nbsp;...",
+      "cacheId": "xr5raYRLl1UJ",
+      "formattedUrl": "https://stackoverflow.com/.../how-to-read-and-process-a-pipe-delimited-file- in-rust",
+      "htmlFormattedUrl": "https://stackoverflow.com/.../\u003cb\u003ehow-to-read\u003c/b\u003e-and-process-a-pipe-delimited-\u003cb\u003efile- in-rust\u003c/b\u003e",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "How to read and process a pipe delimited file in Rust?",
+            "description": "I want to read a pipe delimited file, process the data, and generate a result in CSV format. Input file data A|1|Pass B|2|Fail A|3|Fail C|6|Pass A|8|Pass B|10|Fail C|25|Pass A|12|Fail C|26|Pass ..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "0",
+            "commentcount": "1",
+            "answercount": "2",
+            "name": "How to read and process a pipe delimited file in Rust?",
+            "datecreated": "2017-05-10T09:00:44",
+            "text": "I want to read a pipe delimited file, process the data, and generate a result in CSV format. Input file data A|1|Pass B|2|Fail A|3|Fail C|6|Pass A|8|Pass B|10|Fail C|25|Pass A|12|Fail C|26|Pass...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "2",
+            "commentcount": "2",
+            "text": "As was mentioned, use the csv crate to do the heavy lifting of parsing the file. Then it's just a matter of grouping each row by using a BTreeMap which also helpfully performs sorting. The...",
+            "datecreated": "2017-05-10T21:57:39",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "1",
+            "commentcount": "1",
+            "text": "I'd suggest something like this: use std::str; use std::collections::HashMap; use std::io::{BufReader, BufRead, Cursor}; fn main() { let data = \" A|1|Pass B|2|Fail A|3|Fail C|6|Pass A|8|Pass...",
+            "datecreated": "2017-05-10T10:50:24",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "ketan"
+          },
+          {
+            "name": "Shepmaster"
+          },
+          {
+            "name": "swizard"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "How to read and process a pipe delimited file in Rust?",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "I want to read a pipe delimited file, process the data, and generate a result in CSV format. \n\nInput file data\n\nA|1|Pass\nB|2|Fail\nA|3|Fail\nC|6|Pass\nA|8|Pass\nB|10|Fail\nC|25|Pass\nA|12|Fail\nC|26|Pass\n...",
+            "og:url": "https://stackoverflow.com/questions/43887908/how-to-read-and-process-a-pipe-delimited-file-in-rust"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "How to read a matrix from a txt file in Rust? - Stack Overflow",
+      "htmlTitle": "\u003cb\u003eHow to read\u003c/b\u003e a matrix from a txt \u003cb\u003efile in Rust\u003c/b\u003e? - Stack Overflow",
+      "link": "https://stackoverflow.com/questions/29580979/how-to-read-a-matrix-from-a-txt-file-in-rust",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Apr 11, 2015 ... This is a naive translation of your code to Rust: use std::fs::File; use std::io::{BufRead, BufReader}; fn main() { // open the file let mut ...",
+      "htmlSnippet": "Apr 11, 2015 \u003cb\u003e...\u003c/b\u003e This is a naive translation of your code to \u003cb\u003eRust\u003c/b\u003e: use std::fs::\u003cb\u003eFile\u003c/b\u003e; use std::io::{BufRead, BufReader}; fn main() { // open the \u003cb\u003efile\u003c/b\u003e let mut&nbsp;...",
+      "cacheId": "8L1AzuMRuvIJ",
+      "formattedUrl": "https://stackoverflow.com/.../how-to-read-a-matrix-from-a-txt-file-in-rust",
+      "htmlFormattedUrl": "https://stackoverflow.com/.../\u003cb\u003ehow-to-read\u003c/b\u003e-a-matrix-from-a-txt-\u003cb\u003efile-in-rust\u003c/b\u003e",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "How to read a matrix from a txt file in Rust?",
+            "description": "File example; square matrix; size of matrix after # #3 1.1 -0.2 0.1 0.1 -1.2 -0.2 0.2 -0.1 1.1 Approximately so i would write it in C double **A; int i,j,size=0; FILE *f=NULL; f=fopen(\"input.tx..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "6",
+            "commentcount": "1",
+            "answercount": "1",
+            "name": "How to read a matrix from a txt file in Rust?",
+            "datecreated": "2015-04-11T17:40:14",
+            "text": "File example; square matrix; size of matrix after # #3 1.1 -0.2 0.1 0.1 -1.2 -0.2 0.2 -0.1 1.1 Approximately so i would write it in C double **A; int i,j,size=0; FILE *f=NULL; f=fopen(\"input.txt\",\"...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "12",
+            "commentcount": "3",
+            "text": "This is a naive translation of your code to Rust: use std::fs::File; use std::io::{BufRead, BufReader}; fn main() { // open the file let mut f = BufReader::new(File::open(\"input.txt\").unwrap());...",
+            "datecreated": "2015-04-11T21:02:23",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "vessd"
+          },
+          {
+            "name": "Vladimir Matveev"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "How to read a matrix from a txt file in Rust?",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "File example; square matrix; size of matrix after #\n\n#3\n1.1 -0.2 0.1\n0.1 -1.2 -0.2\n0.2 -0.1 1.1\r\nApproximately so i would write it in C\n\ndouble **A;\nint i,j,size=0;\nFILE *f=NULL;\n\nf=fopen(\"input.tx...",
+            "og:url": "https://stackoverflow.com/questions/29580979/how-to-read-a-matrix-from-a-txt-file-in-rust"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    },
+    {
+      "kind": "customsearch#result",
+      "title": "Is this the right way to read lines from file and split them into words in ...",
+      "htmlTitle": "Is this the right \u003cb\u003eway to read\u003c/b\u003e lines from \u003cb\u003efile\u003c/b\u003e and split them into words in ...",
+      "link": "https://stackoverflow.com/questions/25581463/is-this-the-right-way-to-read-lines-from-file-and-split-them-into-words-in-rust",
+      "displayLink": "stackoverflow.com",
+      "snippet": "Aug 30, 2014 ... Editor's note: This code example is from a version of Rust prior to 1.0 and is not syntactically valid Rust 1.0 code. Updated versions of this ...",
+      "htmlSnippet": "Aug 30, 2014 \u003cb\u003e...\u003c/b\u003e Editor&#39;s note: This code example is from a version of \u003cb\u003eRust\u003c/b\u003e prior to 1.0 and is not syntactically valid \u003cb\u003eRust\u003c/b\u003e 1.0 code. Updated versions of this&nbsp;...",
+      "cacheId": "ISuwjNvKWp8J",
+      "formattedUrl": "https://stackoverflow.com/.../is-this-the-right-way-to-read-lines-from-file-and -split-them-into-words-in-rust",
+      "htmlFormattedUrl": "https://stackoverflow.com/.../is-this-the-right-way-to-\u003cb\u003eread\u003c/b\u003e-lines-from-\u003cb\u003efile\u003c/b\u003e-and -split-them-into-words-in-\u003cb\u003erust\u003c/b\u003e",
+      "pagemap": {
+        "cse_thumbnail": [
+          {
+            "src": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQYl7zuT3cw_BBRAyhdQEbQuBgqdNHXKHIYKL8S8ly8x9L_XA9sdwSmiHs",
+            "width": "225",
+            "height": "225"
+          }
+        ],
+        "qapage": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "primaryimageofpage": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "name": "Is this the right way to read lines from file and split them into words in Rust?",
+            "description": "Editor's note: This code example is from a version of Rust prior to 1.0 and is not syntactically valid Rust 1.0 code. Updated versions of this code produce different errors, but the answers still c..."
+          }
+        ],
+        "question": [
+          {
+            "image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon.png?v=c78bd457575a",
+            "upvotecount": "9",
+            "answercount": "2",
+            "name": "Is this the right way to read lines from file and split them into words in Rust?",
+            "datecreated": "2014-08-30T10:40:01",
+            "text": "Editor's note: This code example is from a version of Rust prior to 1.0 and is not syntactically valid Rust 1.0 code. Updated versions of this code produce different errors, but the answers...",
+            "url": "Share"
+          }
+        ],
+        "answer": [
+          {
+            "upvotecount": "17",
+            "text": "There is a shorter and more readable way of getting words from a text file. use std::io::{BufRead, BufReader}; use std::fs::File; let reader = BufReader::new(File::open(\"file.txt\").expect(\"Cannot...",
+            "datecreated": "2016-09-11T08:50:12",
+            "url": "Share"
+          },
+          {
+            "upvotecount": "11",
+            "text": "You could instead read the entire file as a single String and then build a structure of references that points to the words inside: use std::io::{self, Read}; use std::fs::File; fn filename_to_stri...",
+            "datecreated": "2014-08-30T18:31:15",
+            "url": "Share"
+          }
+        ],
+        "person": [
+          {
+            "name": "Michał Fronczyk"
+          },
+          {
+            "name": "katomaso"
+          },
+          {
+            "name": "wingedsubmariner"
+          }
+        ],
+        "metatags": [
+          {
+            "og:image": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded",
+            "og:type": "website",
+            "twitter:card": "summary",
+            "twitter:title": "Is this the right way to read lines from file and split them into words in Rust?",
+            "og:site_name": "Stack Overflow",
+            "twitter:domain": "stackoverflow.com",
+            "viewport": "width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0",
+            "twitter:description": "Editor's note: This code example is from a version of Rust prior to 1.0 and is not syntactically valid Rust 1.0 code. Updated versions of this code produce different errors, but the answers still c...",
+            "og:url": "https://stackoverflow.com/questions/25581463/is-this-the-right-way-to-read-lines-from-file-and-split-them-into-words-in-rust"
+          }
+        ],
+        "cse_image": [
+          {
+            "src": "https://cdn.sstatic.net/Sites/stackoverflow/Img/apple-touch-icon@2.png?v=73d79a89bded"
+          }
+        ]
+      }
+    }
+  ]
+}
