@@ -25,6 +25,7 @@ function! RunCommandToBuffer(command)
     setlocal buftype=nofile bufhidden=wipe nobuflisted nowrap
     call setline(1, split(output, '\n'))
     normal! gg
+    setlocal filetype=somd
 endfunction
 
 nnoremap <buffer> <CR> :call FetchSO()<CR>
