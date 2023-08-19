@@ -18,9 +18,10 @@ var tmpl string
 var t = template.Must(template.New("tmpl").Parse(tmpl))
 
 var searchCmd = &cobra.Command{
-	Use:   "search",
-	Args:  cobra.MinimumNArgs(1),
-	Short: "Search for a question",
+	Use:     "search",
+	Short:   "Search for a question",
+	Args:    cobra.MinimumNArgs(1),
+	Aliases: []string{"s"},
 	Run: func(cmd *cobra.Command, args []string) {
 		ctx := cmd.Context()
 		client := ctx.Value(clientKey)
