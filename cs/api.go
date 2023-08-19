@@ -52,6 +52,7 @@ func (c CSClient) Search(query string) (*SearchResult, error) {
 	call := c.cse.List()
 	call.Q(query)
 	call.Cx(c.engineID)
+	call.Num(5)
 
 	resp, err := call.Do()
 	if err != nil {

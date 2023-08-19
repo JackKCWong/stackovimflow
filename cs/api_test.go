@@ -24,6 +24,6 @@ func TestSearch(t *testing.T) {
 			t.Fatal(err)
 		}
 
-		So(len(res.Items), ShouldBeGreaterThan, 0)
+		So(len(res.Items), ShouldEqual, 5)
 	})
 }
