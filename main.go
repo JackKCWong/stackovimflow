@@ -15,6 +15,7 @@ var root = &cobra.Command{
 
 func init() {
 	root.AddCommand(searchCmd)
+	root.AddCommand(fetchCmd)
 }
 
 var clientKey = struct{}{}

@@ -1,0 +1,109 @@
+
+🔗 https://stackoverflow.com/questions/240244/vim-how-to-read-range-of-lines-from-a-file-into-current-buffer
+❓ Question: vim -- How to read range of lines from a file into current buffer - Stack ...
+        ✅   Oct 27, 2008 ... :r! sed -n 147,227p /path/to/foo/foo.c.
+    
+        📈   103	Oct 27, 2008
+        :r! sed -n 147,227p /path/to/foo/foo.c
+    
+        📈   33	Jan 22, 2014
+        You can do it in pure Vimscript, without having to use an external tool like sed: :put =readfile('/path/to/foo/foo.c')[146:226] Note that we must decrement one from the line numbers because...
+    
+        📈   23	Oct 27, 2008
+        The {range} refers to the destination in the current file, not the range of lines in the source file. After some experimentation, it seems :147,227r /path/to/foo/foo.c means insert the contents...
+    
+        📈   13	Jul 10, 2017
+        Other solutions posted are great for specific line numbers. It's often the case that you want to read from top or bottom of another file. In that case, reading the output of head or tail is...
+    
+        📈   4	Jan 15, 2014
+        I just had to do this in a code project of mine and did it this way: In buffer with /path/to/foo/foo.c open: :147,227w export.txt In buffer I'm working with: :r export.txt Much easier in my...
+    
+        📈   2	Oct 27, 2008
+        You will need to: :r /path/to/foo/foo.c :d 228,$ :d 1,146 Three steps, but it will get it done...
+    
+        📈   2	Jun 18, 2013
+        A range permits a command to be applied to a group of lines in the current buffer. So, the range of read instruction means where to insert the content in the current file, but not the range...
+    
+#######################################################
+
+🔗 https://stackoverflow.com/questions/54244849/read-a-file-line-by-line-on-bash-each-line-containing-the-path-to-another-unqiu
+❓ Question: shell - Read a file line-by-line on bash; each line containing the path ...
+        ✅   Jan 17, 2019 ... Replace: vim -c ":q" -cq $line. With: vim -c ":q" -cq "$line" </dev/tty. The redirection </dev/tty tells vim to take its standard input from ...
+    
+        📈   2	Jan 17, 2019
+        Replace: vim -c ":q" -cq $line With: vim -c ":q" -cq "$line" </dev/tty The redirection </dev/tty tells vim to take its standard input from the terminal. Without that, the standard input for...
+    
+        📈   0	Jan 17, 2019
+        Although I'm not sure of your ultimate goal, this shell command will execute vim once per line in a.txt: xargs -o -n1 vim -c ':q' < a.txt As explained in the comments to Read a file line by...
+    
+        📈   0	Jan 17, 2019
+        The problem was already mentioned in a comment under the answer you based your script on. vim is consuming stdin which is given to the loop by done < $1. We can observe the same behavior in...
+    
+#######################################################
+
+🔗 https://stackoverflow.com/questions/1169805/how-to-load-another-files-content-to-the-current-file-in-vim
+❓ Question: How to load another file's content to the current file in Vim? - Stack ...
+        ✅   Jul 23, 2009 ... And your cursor is on the first line and you type: :read new_file. Then your buffer will be: I meant what I said and I said what I meant I ...
+    
+        📈   98	Jul 23, 2009
+        at the VIM command prompt: :read new_file or for short: :r new_file This will insert the contents of new_file under where the cursor is. For instance if this is the contents of new_file: I...
+    
+#######################################################
+
+🔗 https://stackoverflow.com/questions/42559948/bash-read-file-path-from-another-file-and-open-with-vim
+❓ Question: bash: read file path from another file and open with vim - Stack ...
+        ✅   Mar 2, 2017 ... Use a different file descriptor instead. while IFS= read -r <&3 line; do vim -o "$line"; done 3< edit.list. Now vim still uses the terminal ...
+    
+        📈   4	Mar 02, 2017
+        When you redirect standard input for the loop, vim inherits that as its standard input as well. Use a different file descriptor instead. while IFS= read -r <&3 line; do vim -o "$line"; done...
+    
+        📈   1	Mar 02, 2017
+        You don't really need a loop. Command substitution does the job with less typing: $ vim -o `< edit.list` or: $ vim -o $(< edit.list)
+    
+        📈   0	Apr 29, 2019
+        The problem is that you've overridden the standard input to vim, not just that for the while loop. You can fix this by explicitly telling vim to take its standard input from the controlling...
+    
+#######################################################
+
+🔗 https://stackoverflow.com/questions/3569997/how-to-find-out-line-endings-in-a-text-file
+❓ Question: linux - How to find out line-endings in a text file? - Stack Overflow
+        ✅   Aug 25, 2010 ... You can use the file utility to give you an indication of the type of line endings. Unix: $ file testfile1.txt testfile.txt: ASCII text.
+    
+        📈   564	Aug 25, 2010
+        You can use the file utility to give you an indication of the type of line endings. Unix: $ file testfile1.txt testfile.txt: ASCII text "DOS": $ file testfile2.txt testfile2.txt: ASCII text,...
+    
+        📈   287	Dec 20, 2015
+        Ubuntu 14.04: simple cat -e <filename> works just fine. This displays Unix line endings (\n or LF) as $ and Windows line endings (\r\n or CRLF) as ^M$.
+    
+        📈   146	Aug 25, 2010
+        In vi... :set list to see line-endings. :set nolist to go back to normal. While I don't think you can see \n or \r\n in vi, you can see which type of file it is (UNIX, DOS, etc.) to infer which...
+    
+        📈   117	Aug 25, 2010
+        In the bash shell, try cat -v <filename>. This should display carriage-returns for windows files. (This worked for me in rxvt via Cygwin on Windows XP). Editor's note: cat -v visualizes \r...
+    
+        📈   44	Nov 22, 2017
+        Try file, then file -k, then dos2unix -ih file will usually be enough. But for tough cases try file -k or dos2unix -ih. Details below. Try file -k Short version: file -k somefile.txt will tell...
+    
+        📈   22	Jul 27, 2015
+        To show CR as ^M in less use less -u or type -u once less is open. man less says: -u or --underline-special Causes backspaces and carriage returns to be treated as print- able characters; that...
+    
+        📈   8	Sep 10, 2013
+        You can use xxd to show a hex dump of the file, and hunt through for "0d0a" or "0a" chars. You can use cat -v <filename> as @warriorpostman suggests.
+    
+        📈   5	Oct 28, 2012
+        You may use the command todos filename to convert to DOS endings, and fromdos filename to convert to UNIX line endings. To install the package on Ubuntu, type sudo apt-get install tofrodos.
+    
+        📈   5	Sep 15, 2017
+        You can use vim -b filename to edit a file in binary mode, which will show ^M characters for carriage return and a new line is indicative of LF being present, indicating Windows CRLF line endings....
+    
+        📈   1	Oct 13, 2015
+        I dump my output to a text file. I then open it in notepad ++ then click the show all characters button. Not very elegant but it works.
+    
+        📈   0	Nov 19, 2019
+        Vim - always show Windows newlines as ^M If you prefer to always see the Windows newlines in vim render as ^M, you can add this line to your .vimrc: set ffs=unix This will make vim interpret...
+    
+        📈   0	Mar 26, 2023
+        More portable, maybe even POSIX. Given the example above $ printf "abc\ndef\r\n" abc def Use sed $ printf "abc\ndef\r\n" | sed -n l abc$ def\r$ Use od $ printf "abc\ndef\r\n" | od -c ## optional...
+    
+#######################################################
+
