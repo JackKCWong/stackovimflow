@@ -2,6 +2,7 @@ package cs
 
 import (
 	"context"
+	"encoding/json"
 
 	"google.golang.org/api/customsearch/v1"
 	"google.golang.org/api/option"
@@ -23,7 +24,7 @@ func WithEngineID(engineID string) coption {
 	}
 }
 
-// WithApiKey 
+// WithApiKey
 func WithApiKey(apiKey string) coption {
 	return func(c *CSClient) {
 		c.apiKey = apiKey
@@ -59,9 +60,23 @@ func (c CSClient) Search(query string) (*SearchResult, error) {
 
 	var items = make([]Item, 0, len(resp.Items))
 	for i := range resp.Items {
+		it := resp.Items[i]
+		post := Post{}
+		page, err := it.Pagemap.MarshalJSON()
+		if err != nil {
+			return nil, err
+		}
+
+		err = json.Unmarshal(page, &post)
+		if err != nil {
+			return nil, err
+		}
+
 		items = append(items, Item{
-			Title: resp.Items[i].Title,
-			Link:  resp.Items[i].Link,
+			Title:   it.Title,
+			Link:    it.Link,
+			Snippet: it.Snippet,
+			Post:    post,
 		})
 	}
 
