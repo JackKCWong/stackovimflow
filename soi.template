@@ -1,0 +1,10 @@
+{{ range .Items }}
+🔗 {{ .Link }}
+❓ Question: {{ .Title }}
+        ✅   {{ .Snippet }}
+    {{ range $ans := .Post.Answers }}
+        📈   {{ $ans.Upvotecount }}{{"\t"}}{{ $ans.CreatedDate }}
+        {{ $ans.Text }}
+    {{ end }}
+#######################################################
+{{ end }}

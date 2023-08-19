@@ -1,5 +1,7 @@
 package cs
 
+import "time"
+
 type SearchResult struct {
 	Items []Item `json:"items"`
 }
@@ -31,4 +33,13 @@ type Answer struct {
 	Text        string `json:"text"`
 	Datecreated string `json:"datecreated"`
 	URL         string `json:"url"`
+}
+
+func (a Answer) CreatedDate() (string, error) {
+	tm, err := time.Parse("2006-01-02T15:04:05", a.Datecreated)
+	if err != nil {
+		return "", err
+	}
+
+	return tm.Format("Jan 02, 2006"), nil
 }
