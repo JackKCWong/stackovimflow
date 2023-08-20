@@ -1,7 +1,6 @@
 {{ range .Items }}
 🔗 {{ .Link }}
 ❓: {{ .Title }}
-  ✅  {{ .Snippet }}
 {{ range $ans := .Post.Answers }}
   📈  {{ $ans.Upvotecount }}{{"\t"}}{{ $ans.CreatedDate }}
   👼  {{ $ans.Text }}

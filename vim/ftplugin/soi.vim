@@ -32,11 +32,6 @@ function! LocateAnswer(command, ans)
         call search('\V' . pat, 'w')
         normal! 0
     endif
-    if a:ans =~ "  ✅  "
-        let pat = a:ans[23:33]
-        call search('\V' . pat, 'w')
-        normal! 0
-    endif
 endfunction
 
 nnoremap <buffer> <CR> :call FetchAnswers()<CR>
