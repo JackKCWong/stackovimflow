@@ -2,7 +2,7 @@
 
 Search StackOverflow and view answers (minus comments) in Vim. Using Google CustomSearch apis. So I don't have to leave the terminal and keyboard to copy & paste from StackOverflow. 🙊
 
-[demo](./demo.gif)
+![demo](https://github.com/JackKCWong/stackovimflow/blob/bd103f6ed08ae68f62d0738884d1a44244886993/demo.gif)
 
 ## Installation
 
