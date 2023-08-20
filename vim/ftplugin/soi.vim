@@ -1,4 +1,5 @@
 setlocal readonly
+setlocal buftype=nofile bufhidden=wipe nobuflisted nowrap
 
 function! FetchSO()
     let line = line('.')
