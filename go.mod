@@ -1,12 +1,14 @@
 module github.com/JackKCWong/stackovimflow
 
-go 1.21.0
-
-require github.com/smartystreets/goconvey v1.8.1
+go 1.18
 
 require (
-	github.com/JohannesKaufmann/html-to-markdown v1.4.0 // indirect
-	github.com/PuerkitoBio/goquery v1.8.1 // indirect
+	github.com/JohannesKaufmann/html-to-markdown v1.4.0
+	github.com/PuerkitoBio/goquery v1.8.1
+	github.com/smartystreets/goconvey v1.8.1
+)
+
+require (
 	github.com/andybalholm/cascadia v1.3.1 // indirect
 	github.com/inconshreveable/mousetrap v1.1.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
@@ -31,7 +33,7 @@ require (
 	golang.org/x/oauth2 v0.11.0 // indirect
 	golang.org/x/sys v0.11.0 // indirect
 	golang.org/x/text v0.12.0 // indirect
-	google.golang.org/api v0.138.0 // indirect
+	google.golang.org/api v0.138.0
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20230807174057-1744710a1577 // indirect
 	google.golang.org/grpc v1.57.0 // indirect
