@@ -30,6 +30,12 @@ function! LocateAnswer(command, ans)
     if a:ans =~ "  👼  "
         let pat = a:ans[strlen("  👼  "):20]
         call search('\V' . pat, 'w')
+        normal! 0
+    endif
+    if a:ans =~ "  ✅  "
+        let pat = a:ans[23:33]
+        call search('\V' . pat, 'w')
+        normal! 0
     endif
 endfunction
 

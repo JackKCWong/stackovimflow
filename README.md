@@ -1,6 +1,6 @@
 # stackovimflow
 
-Search StackOverflow and view answers in Vim. Using Google CustomSearch apis. So I don't have to leave the terminal and keyboard to copy & paste from StackOverflow. 🙊
+Search StackOverflow and view answers (minus comments) in Vim. Using Google CustomSearch apis. So I don't have to leave the terminal and keyboard to copy & paste from StackOverflow. 🙊
 
 ## Installation
 
@@ -39,6 +39,7 @@ function sos() {
 sos your question as if you are searching on StackOverflow
 ```
 
-It first load the top 5 results in a vim buffer. When you press <CR>,
-it will open the selected answer in a new buffer.
-In the new buffer, if there is a code block, you can press <CR> to copy the code block to system clipboard.
+It first load the top 5 results in a vim buffer with filetype soi. When you press <CR>,
+it will open the selected answer in a new buffer with filetype somd.
+
+In a somd, you can press <CR> to copy the code block to system clipboard when you are inside a "```" code block.

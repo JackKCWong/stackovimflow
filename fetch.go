@@ -5,6 +5,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"strings"
 
 	md "github.com/JohannesKaufmann/html-to-markdown"
 	"github.com/PuerkitoBio/goquery"
@@ -42,9 +43,27 @@ func fetch(url string) {
 	var converter = md.NewConverter("", true, nil)
 	converter.AddRules(
 		md.Rule{
-			Filter: []string{"a"},
+			Filter: []string{"button"},
 			Replacement: func(content string, selec *goquery.Selection, opts *md.Options) *string {
 				return md.String("")
+			},
+		},
+		md.Rule{
+			Filter: []string{"a"},
+			Replacement: func(content string, selec *goquery.Selection, opts *md.Options) *string {
+				if href, exist := selec.Attr("href"); exist && strings.HasPrefix(href, "/") {
+					return md.String("")
+				}
+				return &content
+			},
+		},
+		md.Rule{
+			Filter: []string{"div"},
+			Replacement: func(content string, selec *goquery.Selection, opts *md.Options) *string {
+				if clazz, exist := selec.Attr("class"); exist && strings.Contains(clazz, "user-details") {
+					return md.String("")
+				}
+				return &content
 			},
 		},
 	)
