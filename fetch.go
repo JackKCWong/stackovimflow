@@ -97,7 +97,7 @@ func render(r io.Reader) string {
 	var sb strings.Builder
 	doc.Find("div.answercell").Each(func(i int, s *goquery.Selection) {
 		mdtxt := converter.Convert(s)
-		sb.WriteString("*** I am a separator ***\n\n")
+		sb.WriteString("### --- I am a separator --- ###n\n")
 		sb.WriteString(mdtxt)
 		sb.WriteString("\n\n")
 	})

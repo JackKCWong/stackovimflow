@@ -55,3 +55,5 @@ In a somd, you can press `<CR>` to copy the code block to system clipboard when 
 Use `<C-j>` to enlarge the somd window.
 
 Use `<C-k>` to shrink the somd window.
+
+Use `<C-n>` to jump to next answer.

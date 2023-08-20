@@ -29,4 +29,5 @@ augroup somd
   autocmd FileType somd set clipboard=unnamed
   autocmd FileType somd nnoremap <buffer> <C-h> 3<C-w>>
   autocmd FileType somd nnoremap <buffer> <C-l> 3<C-w><
+  autocmd FileType somd nnoremap <buffer> <C-n> /### --- <CR>
 augroup END
