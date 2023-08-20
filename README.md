@@ -30,9 +30,12 @@ export GCS_HTTPS_PROXY=your-proxy
 ## Usage
 
 ```
+# put this in your .bash_profile or equivalent
+
 function sos() {
     stackovimflow search $@ | vim -
 }
+
 sos your question as if you are searching on StackOverflow
 ```
 

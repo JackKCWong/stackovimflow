@@ -34,7 +34,7 @@ func installFiles(fs embed.FS, path, dest string) {
 	}
 
 	for _, f := range dirs {
-		destFs, err := os.OpenFile(filepath.Join(dest, f.Name()), os.O_RDWR|os.O_CREATE, 0750)
+		destFs, err := os.OpenFile(filepath.Join(dest, f.Name()), os.O_RDWR|os.O_CREATE|os.O_TRUNC, 0750)
 		if err != nil {
 			log.Fatalf("failed to create vim plugins: %q", err)
 		}

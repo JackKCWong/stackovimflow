@@ -1,19 +1,19 @@
 setlocal readonly
 setlocal buftype=nofile bufhidden=wipe nobuflisted nowrap
 
-function! FetchSO()
+function! FetchAnswers()
     let line = line('.')
     let col = col('.')
-    let search_url = search('\chttps\=', 'bW')
+    let txt = getline('.')
+    let search_url = search('🔗 https://stackoverflow.com/questions', 'bW')
     if search_url > 0
         let url = matchstr(getline(search_url), '\chttps:\/\/\S*')
-        call RunCommandToBuffer('stackovimflow fetch ' . shellescape(url))
+        call LocateAnswer('stackovimflow fetch ' . shellescape(url), txt)
     endif
-    call cursor(line, col)
 endfunction
 
 
-function! RunCommandToBuffer(command)
+function! LocateAnswer(command, ans)
     let output = system(a:command)
     let buffer_name = 'StackOverflow'
     let buffer_number = bufnr(buffer_name)
@@ -23,10 +23,14 @@ function! RunCommandToBuffer(command)
     endif
 
     silent execute 'botright vnew ' . buffer_name
-    setlocal buftype=nofile bufhidden=wipe nobuflisted nowrap
+    setlocal filetype=somd
     call setline(1, split(output, '\n'))
     normal! gg
-    setlocal filetype=somd
+
+    if a:ans =~ "  👼  "
+        let pat = a:ans[strlen("  👼  "):20]
+        call search('\V' . pat, 'w')
+    endif
 endfunction
 
-nnoremap <buffer> <CR> :call FetchSO()<CR>
+nnoremap <buffer> <CR> :call FetchAnswers()<CR>
