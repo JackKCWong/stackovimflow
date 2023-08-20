@@ -8,12 +8,12 @@ import (
 )
 
 func TestFetch(t *testing.T) {
-	Convey("it can render html to md with code block highlight", t, func() {
+	Convey("it can render html to md without code block highlight", t, func() {
 		f, err := os.Open("./test_render.html")
 		So(err, ShouldBeNil)
 		defer f.Close()
 
 		txt := render(f)
-		So(txt, ShouldContainSubstring, "```golang\n")
+		So(txt, ShouldContainSubstring, "```\n")
 	})
 }

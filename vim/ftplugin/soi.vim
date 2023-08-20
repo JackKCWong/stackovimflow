@@ -14,6 +14,8 @@ endfunction
 
 
 function! LocateAnswer(command, ans)
+    let current_width = winwidth(0)
+
     let output = system(a:command)
     let buffer_name = 'StackOverflow'
     let buffer_number = bufnr(buffer_name)
@@ -32,6 +34,9 @@ function! LocateAnswer(command, ans)
         call search('\V' . pat, 'w')
         normal! 0
     endif
+
+    let new_width = current_width * 0.7
+    execute 'vertical resize ' . new_width
 endfunction
 
 nnoremap <buffer> <CR> :call FetchAnswers()<CR>

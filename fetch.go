@@ -1,12 +1,13 @@
 package main
 
 import (
+	"context"
 	"fmt"
 	"io"
 	"log"
 	"net/http"
-	"regexp"
 	"strings"
+	"time"
 
 	md "github.com/JohannesKaufmann/html-to-markdown"
 	"github.com/PuerkitoBio/goquery"
@@ -24,7 +25,15 @@ var fetchCmd = &cobra.Command{
 }
 
 func fetch(url string) {
-	res, err := http.Get(url)
+	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
+	defer cancel()
+
+	req, err := http.NewRequestWithContext(ctx, http.MethodGet, url, nil)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	res, err := http.DefaultClient.Do(req)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -72,37 +81,26 @@ func render(r io.Reader) string {
 				return &content
 			},
 		},
-		md.Rule{
-			Filter: []string{"pre"},
-			Replacement: func(content string, selec *goquery.Selection, opts *md.Options) *string {
-				lang := ""
-				if clazz, exist := selec.Attr("class"); exist {
-					lang = extractLang(clazz)
-				}
-
-				codeblock := fmt.Sprintf("```%s\n%s\n```", lang, strings.ReplaceAll(content, "`", ""))
-				return &codeblock
-			},
-		},
+		// md.Rule{
+		// 	Filter: []string{"pre"},
+		// 	Replacement: func(content string, selec *goquery.Selection, opts *md.Options) *string {
+		// 		lang := ""
+		// 		lexer := lexers.Analyse(content)
+		// 		if lexer != nil {
+		// 			lang = lexer.Config().Name
+		// 		}
+		// 		codeblock := fmt.Sprintf("```%s\n%s\n```", lang, strings.ReplaceAll(content, "`", ""))
+		// 		return &codeblock
+		// 	},
+		// },
 	)
 	var sb strings.Builder
 	doc.Find("div.answercell").Each(func(i int, s *goquery.Selection) {
 		mdtxt := converter.Convert(s)
-		sb.WriteString("*** I am a separator ***\n")
+		sb.WriteString("*** I am a separator ***\n\n")
 		sb.WriteString(mdtxt)
 		sb.WriteString("\n\n")
 	})
 
 	return sb.String()
-}
-
-var rexLang = regexp.MustCompile(`lang-(\w+)`)
-
-func extractLang(input string) string {
-	result := rexLang.FindStringSubmatch(input)
-	if len(result) > 1 {
-		return result[1]
-	}
-
-	return ""
 }
