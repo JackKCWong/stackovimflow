@@ -1,0 +1,272 @@
+######################################################
+If you are using a Unix-based system (e.g. Linux or Mac OSX) you could try removing the debugging information included in the executable by building it with the -w flag:
+
+```
+go build -ldflags "-w" prog.go
+
+```
+
+The file sizes are reduced dramatically.
+
+For more details visit the GDB's page: http://golang.org/doc/gdb
+
+ answered Jan 15, 2014 at 11:04
+######################################################
+The 2016 answer:
+
+1\. Use Go 1.7
+
+2\. Compile with `go build -ldflags "-s -w"`
+
+```
+➜ ls -lh hello
+-rwxr-xr-x 1 oneofone oneofone 976K May 26 20:49 hello*
+
+```
+
+3\. Then use `upx`, `goupx` is no longer needed since 1.6.
+
+```
+➜ ls -lh hello
+-rwxr-xr-x 1 oneofone oneofone 367K May 26 20:49 hello*
+
+```
+ answered May 26, 2016 at 18:50
+######################################################
+## Note: This answer is outdated
+
+Please note that this answer is outdated. Please refer to the other higher-voted answers. I would like to delete this post, accepted answers can't be deleted though.
+
+* * *
+
+Is it a problem that the file is larger? I don't know Go but I would assume that it statically links some runtime lib which is not the case for the C program. But probably that is nothing to worry about as soon as your program gets larger.
+
+As described here, statically linking the Go runtime is the default. That page also tells you how to set up for dynamic linking.
+
+ answered Oct 5, 2010 at 7:36
+######################################################
+Go binaries are large because they are statically linked (except for library bindings using cgo). Try statically linking a C program and you'll see it grow to a comparable size.
+
+If this is really a problem for you (which I have a hard time believing), you can compile with gccgo and dynamically link.
+
+ answered Oct 5, 2010 at 13:06
+######################################################
+create a file named `main.go`,
+let's try with simple hello world program.
+
+```
+package main
+import "fmt"
+func main(){
+    fmt.Println("Hello World!")
+}
+
+```
+
+I use go version 1.9.1
+
+```
+$ go version
+ go version go1.9.1 linux/amd64
+
+```
+
+Compile with standard `go build` command.
+
+```
+$ go build main.go
+$ ls -lh
+-rwxr-xr-x-x 1 nil nil 1.8M Oct 27 07:47 main
+
+```
+
+Let's compile once again with `go build` but with `ldflags` as suggested above,
+
+```
+$ go build -ldflags "-s -w" main.go
+$ ls -lh
+-rwxr-xr-x-x 1 nil nil 1.2M Oct 27 08:15 main
+
+```
+
+File size is reduced by 30%.
+
+Now, lets use `gccgo`,
+
+```
+$ go version
+ go version go1.8.1 gccgo (GCC) 7.2.0 linux/amd64
+
+```
+
+Building go with `gccgo`,
+
+```
+$ go build main.go
+$ ls -lh
+-rwxr-xr-x 1 nil nil 34K Oct 27 12:18 main
+
+```
+
+Binary size is reduced by almost 100%.
+Let's once again try building our `main.go` with `gccgo` but with build flags,
+
+```
+$ go build -gccgoflags "-s -w" main.go
+-rwxr-xr-x 1 nil nil 23K Oct 27 13:02 main
+
+```
+
+**Warning:**
+As `gccgo` binaries were dynamically linked.
+If you have a binary which is very big in size, your binary when compiled with gccgo will not be decreased by 100%, but it will be reduced in size by considerable amount.
+
+Compared to gc, gccgo is slower to compile code but supports more powerful optimizations, so a CPU-bound program built by gccgo will usually run faster. All the optimizations implemented in GCC over the years are available, including inlining, loop optimizations, vectorization, instruction scheduling, and more. While it does not always produce better code, in some cases programs compiled with gccgo can run 30% faster.
+
+The GCC 7 releases are expected to include a complete implementation of the Go 1.8 user libraries. As with earlier releases, the Go 1.8 runtime is not fully merged, but that should not be visible to Go programs.
+
+**Pros:**
+
+1. Reduced size
+2. Optimized.
+
+**Cons**
+
+1. Slow
+2. Cannot use the latest version of `go`.
+
+You can see over here and here.
+
+ answered Oct 27, 2017 at 7:59
+######################################################
+You should get goupx, it will "fix" Golang ELF executables to work with `upx`. I've already got around 78% file size shrink in some cases `~16MB >> ~3MB`.
+
+Compression ratio usually tends to 25%, so it's worth a try:
+
+```
+$ go get github.com/pwaller/goupx
+$ go build -o filename
+$ goupx filename
+
+```
+
+>>
+
+```
+2014/12/25 10:10:54 File fixed!
+        File size         Ratio      Format      Name
+   --------------------   ------   -----------   -----------
+  16271132 ->   3647116   22.41%  linux/ElfAMD   filename
+Packed 1 file.
+
+```
+
+EXTRA: `-s` flag (strip) can shrink bin file even more `goupx -s filename`
+
+ answered Dec 25, 2014 at 13:01
+######################################################
+More compact hello-world example:
+
+```
+package main
+func main() {
+  print("Hello world!")
+}
+
+```
+
+We are skiped large `fmt` package and noticeably reduced binary:
+
+```
+  $ go build hello.go
+  $ ls -lh hello
+  ... 259K ... hello2
+  $ strip hello
+  $ ls -lh hello
+  ... 162K ... hello2
+
+```
+
+Not so compact as C, but though measured in K not M :) Ok, it is not general way just shows some ways to optimize a size: use _strip_ and try to use minimum packages. Anyway Go is not language for making tiny sized binaries.
+
+ answered Feb 28, 2013 at 15:44
+######################################################
+By default gcc links dynamically and go - statically.
+
+But if you link you C code statically, you might get a binary with a bigger size.
+
+In my case:
+
+- go x64 (1.10.3) - generated binary with size 1214208 byte
+- gcc x64 (6.2.0) - generated binary with size 1421312 byte
+
+both binaries are statically linked and without debug\_info.
+
+```
+go build -ldflags="-s -w" -o test-go test.go
+gcc -static -s -o test-c test.c
+
+```
+ answered Sep 13, 2019 at 7:40
+######################################################
+2018 answer for the next Go 1.11, as tweeted by Brad Fitzpatrick (mid-June 2018):
+
+> As of a few minutes ago, DWARF sections in #golang ELF binaries are now compressed, so at tip binaries are now smaller than Go 1.10, even with all the extra debug stuff at tip.
+
+![https://pbs.twimg.com/media/DfwkBaqUEAAb8-Q.jpg:large](https://i.stack.imgur.com/aIl2Z.jpg)
+
+Cf. Golang issue 11799:
+
+> Compressing our debug info might offer a significant, cheap file size win.
+
+See more in commit 594eae5
+
+> ## cmd/link: compress DWARF sections in ELF binaries
+>
+> The trickiest part of this is that the binary layout code (blk, elfshbits, and various other things) assumes a constant offset between symbols' and sections' file locations and their virtual addresses.
+>
+> Compression, of course, breaks this constant offset.
+>
+> But we need to assign virtual addresses to everything before compression in order to
+> resolve relocations before compression.
+>
+> As a result, compression needs to re-compute the "address" of the DWARF sections and symbols based on their compressed size.
+>
+> Luckily, these are at the end of the file, so this doesn't perturb any other sections or symbols. (And there is, of course, a surprising amount of code that assumes the DWARF segment comes last, so what's one more place?)
+>
+> ```
+> name        old exe-bytes   new exe-bytes   delta
+> HelloSize      1.60MB ± 0%     1.05MB ± 0%  -34.39%  (p=0.000 n=30+30)
+> CmdGoSize      16.5MB ± 0%     11.3MB ± 0%  -31.76%  (p=0.000 n=30+30)
+> [Geo mean]     5.14MB          3.44MB       -33.08%
+>
+> ```
+
+Rob Pike mentions:
+
+> That only helps on machines that use ELF.
+>
+> Binaries are still too big, and growing.
+
+Brad replied:
+
+> At least it's something. Was about to be much worse.
+>
+> Stopped the bleeding for one release.
+
+Reasons: Debug info, but also register map for the GC to let any instruction be a savepoint.
+
+ answered Jun 16, 2018 at 4:21
+######################################################
+The binary contains by default the garbage collector, the schedulding system that manage the go routines, and all the libraries you import.
+
+The result is a minimal size of about 1 Mb.
+
+ answered Jul 31, 2013 at 14:31
+######################################################
+From Go 1.8 you can also use the new plugin system to split up your binary into something that resembles shared libraries. For this release it only works on Linux, but other platforms will probably be supported in the future.
+
+https://tip.golang.org/pkg/plugin/
+
+ answered Jan 11, 2017 at 21:33
+

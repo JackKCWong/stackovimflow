@@ -5,6 +5,7 @@ import (
 	"io"
 	"log"
 	"net/http"
+	"regexp"
 	"strings"
 
 	md "github.com/JohannesKaufmann/html-to-markdown"
@@ -35,7 +36,12 @@ func fetch(url string) {
 		log.Fatalf("status code error: %s %s", res.Status, body)
 	}
 
-	doc, err := goquery.NewDocumentFromReader(res.Body)
+	txt := render(res.Body)
+	fmt.Println(txt)
+}
+
+func render(r io.Reader) string {
+	doc, err := goquery.NewDocumentFromReader(r)
 	if err != nil {
 		log.Fatalf("error parsing response body: %s", err)
 	}
@@ -66,12 +72,37 @@ func fetch(url string) {
 				return &content
 			},
 		},
+		md.Rule{
+			Filter: []string{"pre"},
+			Replacement: func(content string, selec *goquery.Selection, opts *md.Options) *string {
+				lang := ""
+				if clazz, exist := selec.Attr("class"); exist {
+					lang = extractLang(clazz)
+				}
+
+				codeblock := fmt.Sprintf("```%s\n%s\n```", lang, strings.ReplaceAll(content, "`", ""))
+				return &codeblock
+			},
+		},
 	)
+	var sb strings.Builder
 	doc.Find("div.answercell").Each(func(i int, s *goquery.Selection) {
 		mdtxt := converter.Convert(s)
-		fmt.Println("######################################################")
-		fmt.Println()
-		fmt.Println(mdtxt)
-		fmt.Println()
+		sb.WriteString("*** I am a separator ***\n")
+		sb.WriteString(mdtxt)
+		sb.WriteString("\n\n")
 	})
+
+	return sb.String()
+}
+
+var rexLang = regexp.MustCompile(`lang-(\w+)`)
+
+func extractLang(input string) string {
+	result := rexLang.FindStringSubmatch(input)
+	if len(result) > 1 {
+		return result[1]
+	}
+
+	return ""
 }

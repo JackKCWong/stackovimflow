@@ -1,5 +1,4 @@
 setlocal buftype=nofile bufhidden=wipe nobuflisted wrap
-
 nnoremap <buffer> <CR> :call CopyBlockContent()<CR>
 
 function! CopyBlockContent()

@@ -54,4 +54,5 @@ func installFiles(fs embed.FS, path, dest string) {
 func installVim() {
 	installFiles(vimPlugins, "vim/ftdetect", os.ExpandEnv("$HOME/.vim/ftdetect"))
 	installFiles(vimPlugins, "vim/ftplugin", os.ExpandEnv("$HOME/.vim/ftplugin"))
+	installFiles(vimPlugins, "vim/syntax", os.ExpandEnv("$HOME/.vim/syntax"))
 }

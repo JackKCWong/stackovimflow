@@ -41,6 +41,12 @@ function sos() {
 sos your question as if you are searching on StackOverflow
 ```
 
+If you want to see some code block syntax highlight, add the following to your `.vimrc`
+
+```vim
+let g:markdown_fenced_languages = ['html', 'js=javascript', 'golang=go', 'go', 'rust', 'java', 'bash']
+```
+
 It first load the top 5 results in a vim buffer with filetype soi. When you press <CR>,
 it will open the selected answer in a new buffer with filetype somd.
 
