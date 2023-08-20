@@ -35,3 +35,10 @@ function! LocateAnswer(command, ans)
 endfunction
 
 nnoremap <buffer> <CR> :call FetchAnswers()<CR>
+
+augroup soi
+  autocmd!
+  autocmd FileType soi set clipboard=unnamed
+  autocmd FileType soi nnoremap <buffer> <C-h> 3<C-w>>
+  autocmd FileType soi nnoremap <buffer> <C-l> 3<C-w><
+augroup END

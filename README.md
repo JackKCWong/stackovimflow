@@ -47,7 +47,11 @@ If you want to see some code block syntax highlight, add the following to your `
 let g:markdown_fenced_languages = ['html', 'js=javascript', 'golang=go', 'go', 'rust', 'java', 'bash']
 ```
 
-It first load the top 5 results in a vim buffer with filetype soi. When you press <CR>,
+It first load the top 5 results in a vim buffer with filetype soi. When you press `<CR>`,
 it will open the selected answer in a new buffer with filetype somd.
 
-In a somd, you can press <CR> to copy the code block to system clipboard when you are inside a "```" code block.
+In a somd, you can press `<CR>` to copy the code block to system clipboard when you are inside a \`\`\`code block\`\`\` or \`code block\`.
+
+Use `<C-j>` to enlarge the somd window.
+
+Use `<C-k>` to shrink the somd window.
