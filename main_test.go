@@ -9,7 +9,7 @@ import (
 
 func TestFetch(t *testing.T) {
 	Convey("it can render html to md without code block highlight", t, func() {
-		f, err := os.Open("./test_render.html")
+		f, err := os.Open("./testdata/test_render.html")
 		So(err, ShouldBeNil)
 		defer f.Close()
 
