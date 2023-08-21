@@ -49,7 +49,7 @@ func NewClient(ctx context.Context, opts ...coption) (*CSClient, error) {
 }
 
 func (c CSClient) Search(query string) (*SearchResult, error) {
-	call := c.cse.List()
+	call := c.cse.Siterestrict.List()
 	call.Q(query)
 	call.Cx(c.engineID)
 	call.Num(5)
