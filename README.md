@@ -57,3 +57,6 @@ Use `<C-j>` to enlarge the somd window.
 Use `<C-k>` to shrink the somd window.
 
 Use `<C-n>` to jump to next answer.
+
+Use `q` to close the buffer..
+

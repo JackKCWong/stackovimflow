@@ -1,6 +1,7 @@
 package main
 
 import (
+	"context"
 	"log"
 	"os"
 	"strings"
@@ -23,11 +24,18 @@ var searchCmd = &cobra.Command{
 	Args:    cobra.MinimumNArgs(1),
 	Aliases: []string{"s"},
 	Run: func(cmd *cobra.Command, args []string) {
-		ctx := cmd.Context()
-		client := ctx.Value(clientKey)
+		client, err := cs.NewClient(context.Background(),
+			cs.WithApiKey(os.Getenv("GCS_API_KEY")),
+			cs.WithEngineID(os.Getenv("GCS_CX")),
+		)
+
+		if err != nil {
+			log.Fatal(err)
+		}
+
 		query := strings.Join(args, " ")
 
-		search(client.(*cs.CSClient), query)
+		search(client, query)
 	},
 }
 

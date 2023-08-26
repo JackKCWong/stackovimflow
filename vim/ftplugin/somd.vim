@@ -1,4 +1,4 @@
-setlocal buftype=nofile bufhidden=wipe nobuflisted wrap
+setlocal buftype=nofile bufhidden=wipe nobuflisted wrap linebreak
 
 function! CopyBlockContent()
     let line = getline('.')
@@ -23,6 +23,7 @@ function! CopyBlockContent()
 endfunction
 
 nnoremap <buffer> <CR> :call CopyBlockContent()<CR>
+nnoremap <buffer> q :q<CR>
 
 augroup somd 
   autocmd!

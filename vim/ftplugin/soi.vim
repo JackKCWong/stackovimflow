@@ -1,5 +1,4 @@
-setlocal readonly
-setlocal buftype=nofile bufhidden=wipe nobuflisted nowrap
+setlocal buftype=nofile bufhidden=wipe nobuflisted nowrap readonly
 
 function! FetchAnswers()
     let line = line('.')
@@ -40,6 +39,7 @@ function! LocateAnswer(command, ans)
 endfunction
 
 nnoremap <buffer> <CR> :call FetchAnswers()<CR>
+nnoremap <buffer> q :q<CR>
 
 augroup soi
   autocmd!
