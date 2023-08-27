@@ -40,6 +40,8 @@ endfunction
 
 nnoremap <buffer> <CR> :call FetchAnswers()<CR>
 nnoremap <buffer> q :q<CR>
+nnoremap <buffer> u <C-u>
+nnoremap <buffer> d <C-d>
 
 augroup soi
   autocmd!

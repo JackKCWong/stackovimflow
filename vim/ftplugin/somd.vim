@@ -24,6 +24,8 @@ endfunction
 
 nnoremap <buffer> <CR> :call CopyBlockContent()<CR>
 nnoremap <buffer> q :q<CR>
+nnoremap <buffer> u <C-u>
+nnoremap <buffer> d <C-d>
 
 augroup somd 
   autocmd!

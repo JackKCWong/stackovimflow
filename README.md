@@ -58,5 +58,9 @@ Use `<C-k>` to shrink the somd window.
 
 Use `<C-n>` to jump to next answer.
 
+Use `d` to navigate down by half-page.
+
+Use `u` to navigate up by half-page.
+
 Use `q` to close the buffer..
 
